@@ -18,7 +18,9 @@ The following files have been removed from the initial project setup:
 
 - Added a simple backend - see the `backend` folder which contains `index.js` (main server file) and where the `.env` file should be created locally. **NOTE: `.env` has been added to the `.gitignore` files, as it is not there by default in create-react-app**.
 
-- Added CDN for Google Fonts and Font Awesome in index.html 
+- There is a test request made to the [Nomics API](https://nomics.com/docs/) from `index.js`, and the data is retrieved from the back end to the front end in `App.js`.
+
+- Added CDN for Google Fonts and Font Awesome in `index.html` 
 
 
 ## Run in development mode

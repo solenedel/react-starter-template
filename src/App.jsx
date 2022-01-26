@@ -12,7 +12,7 @@ function App() {
     axios
       .request(options)
       .then((response) => {
-        console.log("DATA FROM BACK END: ", response.data);
+        console.log("DATA FROM BACK END: BITCOIN EXCHANGE RATE", response.data);
       })
       .catch((err) => console.error(err));
   }, []);

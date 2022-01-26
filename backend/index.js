@@ -29,8 +29,11 @@ app.get("/results", (req, res) => {
   axios
     .request(options)
     .then((response) => {
-      console.log(response.data[0].currency);
-      res.json(response.data[0].currency);
+      // get only Bitcoin (BTC) data
+      const filteredData = response.data.filter((rates) => {
+        return rates.currency === "BTC";
+      });
+      res.json(filteredData);
     })
     .catch((err) => console.error(err));
 });
