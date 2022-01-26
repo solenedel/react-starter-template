@@ -23,13 +23,14 @@ app.get("/", (req, res) => {
 app.get("/results", (req, res) => {
   const options = {
     method: "GET",
-    url: `https://api.nomics.com/v1/markets?${process.env.REACT_APP_NOMICS_API_KEY}`,
+    url: `https://api.nomics.com/v1/exchange-rates?key=${process.env.REACT_APP_NOMICS_API_KEY}`,
   };
 
   axios
     .request(options)
     .then((response) => {
-      res.json(response.data);
+      console.log(response.data[0].currency);
+      res.json(response.data[0].currency);
     })
     .catch((err) => console.error(err));
 });
