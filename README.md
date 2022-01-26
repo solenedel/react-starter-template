@@ -11,13 +11,19 @@ The following files have been removed from the initial project setup:
 - manifest.json
 - logo192.png and logo512.png
 
-## Run in development mode
-
-To run in dev mode: `npm start`
 
 ## Other additions
 
 - set up ESlint with AirBnB style guide [tutorial](https://dev.to/saurabhggc/add-eslint-prettier-and-airbnb-to-your-project-3mo8) -> (also add format on save to local workspace settings in VScode)
 
+- Added a simple backend - see the `backend` folder which contains `index.js` (main server file) and where the `.env` file should be created locally. **NOTE: `.env` has been added to the `.gitignore` files, as it is not there by default in create-react-app**.
+
 - Added CDN for Google Fonts and Font Awesome in index.html 
+
+
+## Run in development mode
+
+To run the react frontend: `npm run start-frontend`
+To run the react backend: `npm run start-backend`
+
 
