@@ -24,6 +24,6 @@ The following files have been removed from the initial project setup:
 ## Run in development mode
 
 To run the react frontend: `npm run start-frontend`
-To run the react backend: `npm run start-backend`
+To run the backend: `npm run start-backend`
 
 

@@ -5,6 +5,7 @@ const axios = require("axios");
 require("dotenv").config();
 
 const app = express();
+app.use(cors());
 
 // ---------------------ROUTES------------------------ //
 
