@@ -2,10 +2,17 @@ const PORT = 8081;
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
-require("dotenv").config();
+
+const dotenvPath = "./.env";
+require("dotenv").config({ path: dotenvPath });
+// require("dotenv").config();
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: "http://localhost:3000",
+};
+app.use(cors(corsOptions));
 
 // ---------------------ROUTES------------------------ //
 
@@ -16,7 +23,7 @@ app.get("/", (req, res) => {
 app.get("/results", (req, res) => {
   const options = {
     method: "GET",
-    url: "https://randomuser.me/api/",
+    url: `https://api.nomics.com/v1/markets?${process.env.REACT_APP_NOMICS_API_KEY}`,
   };
 
   axios
