@@ -2,15 +2,36 @@ const PORT = 8081;
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
+const { Pool } = require("pg");
 
-const dotenvPath = "./.env";
+let dotenvPath = "./.env";
+
+let ORIGIN_URL = "";
+if (process.env.NODE_ENV === "production") {
+  console.log("running in production!");
+  ORIGIN_URL = "*";
+  dotenvPath = "./.env";
+} else {
+  console.log("running in development!");
+  ORIGIN_URL = "*";
+  dotenvPath = "./.env";
+}
+
 require("dotenv").config({ path: dotenvPath });
 // require("dotenv").config();
 
+// Postgres database connection set up
+const dbParams = require("./db/dbParams");
+
+const db = new Pool(dbParams);
+db.connect(() => console.log("✅ connected to db"));
+
 const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: ORIGIN_URL, // ORIGIN_URL
 };
 app.use(cors(corsOptions));
 
