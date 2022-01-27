@@ -11,7 +11,9 @@
     "cors": "^2.8.5",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
+    "fs": "^0.0.1-security",
     "nodemon": "^2.0.15",
+    "path": "^0.12.7",
     "pg": "^8.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -21,6 +23,7 @@
   "scripts": {
     "start-backend": "cd backend && nodemon index.js",
     "start-frontend": "react-scripts start",
+    "reset-db": "cd backend/db && node reset-db.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
