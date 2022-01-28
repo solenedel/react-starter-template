@@ -26,16 +26,15 @@ function App() {
               <th>Username</th>
               <th>Email</th>
             </tr>
-            <tr>
-              {userData.map((user) => {
-                return <td key={uuidv4()}>{user.username}</td>;
-              })}
-            </tr>
-            <tr>
-              {userData.map((user) => {
-                return <td key={uuidv4()}>{user.email}</td>;
-              })}
-            </tr>
+
+            {userData.map((user) => {
+              return (
+                <tr key={uuidv4()}>
+                  <td>{user.username}</td>
+                  <td>{user.email}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       )}
