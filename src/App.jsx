@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   // test getting data from database
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <h3>My react project</h3>
+      <Dashboard />
     </div>
   );
 }

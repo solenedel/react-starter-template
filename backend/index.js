@@ -1,7 +1,6 @@
 const PORT = 8081;
 const express = require("express");
 const cors = require("cors");
-// const axios = require("axios");
 const { Pool } = require("pg");
 
 let dotenvPath = "./.env";
@@ -34,9 +33,8 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-// ---------------------ROUTES------------------------ //
+// ---------------------GET ROUTES------------------------ //
 
-// test call to get database data
 app.get("/dbtest", (req, res) => {
   const queryText = `SELECT * FROM users;`;
 
@@ -49,6 +47,10 @@ app.get("/dbtest", (req, res) => {
       res.json([]);
     });
 });
+
+// ---------------------POST ROUTES------------------------ //
+
+// ---------------------DELETE ROUTES------------------------ //
 
 // -------------------------------------------------- //
 app.listen(PORT, () => {

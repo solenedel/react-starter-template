@@ -30,3 +30,33 @@ button:hover, a:hover {
 a, a:hover, a:visited {
   text-decoration: none;
 }
+
+section.dashboard form {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 200px;
+  height: 60px;
+  margin: 20px;
+   font-size: 25px;
+}
+
+input::placeholder {
+  font-size: 25px;
+}
+
+button {
+  margin: 20px;
+  font-size: 25px;
+}
+
+ button#add {
+    background: #B2FF8F;
+  }
+
+   button#delete {
+    background: #FFB88F;
+  }
