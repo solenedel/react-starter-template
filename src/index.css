@@ -60,3 +60,8 @@ button {
    button#delete {
     background: #FFB88F;
   }
+
+  table {
+    text-align: left;
+  }
+  

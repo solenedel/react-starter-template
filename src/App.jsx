@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 import Dashboard from "./components/Dashboard";
 
 function App() {
@@ -18,17 +19,26 @@ function App() {
   return (
     <div className="App">
       <Dashboard />
-      <div>
-        {userData.length &&
-          userData.map((user) => {
-            return (
-              <React.Fragment key={user.id}>
-                <div>Username: {user.username}</div>
-                <div>email: {user.email}</div>
-              </React.Fragment>
-            );
-          })}
-      </div>
+      {userData.length && (
+        <table>
+          <tbody>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+            </tr>
+            <tr>
+              {userData.map((user) => {
+                return <td key={uuidv4()}>{user.username}</td>;
+              })}
+            </tr>
+            <tr>
+              {userData.map((user) => {
+                return <td key={uuidv4()}>{user.email}</td>;
+              })}
+            </tr>
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }
