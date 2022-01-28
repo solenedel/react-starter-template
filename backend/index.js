@@ -1,7 +1,7 @@
 const PORT = 8081;
 const express = require("express");
 const cors = require("cors");
-const axios = require("axios");
+// const axios = require("axios");
 const { Pool } = require("pg");
 
 let dotenvPath = "./.env";
@@ -48,24 +48,6 @@ app.get("/dbtest", (req, res) => {
       console.log(err);
       res.json([]);
     });
-});
-
-app.get("/results", (req, res) => {
-  const options = {
-    method: "GET",
-    url: `https://api.nomics.com/v1/exchange-rates?key=${process.env.REACT_APP_NOMICS_API_KEY}`,
-  };
-
-  axios
-    .request(options)
-    .then((response) => {
-      // get only Bitcoin (BTC) data
-      const filteredData = response.data.filter((rates) => {
-        return rates.currency === "BTC";
-      });
-      res.json(filteredData);
-    })
-    .catch((err) => console.error(err));
 });
 
 // -------------------------------------------------- //
