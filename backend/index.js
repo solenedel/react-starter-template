@@ -37,7 +37,7 @@ app.use(cors(corsOptions));
 // ---------------------ROUTES------------------------ //
 
 // test call to get database data
-app.get("/", (req, res) => {
+app.get("/dbtest", (req, res) => {
   const queryText = `SELECT * FROM users;`;
 
   db.query(queryText)
