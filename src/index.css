@@ -39,7 +39,7 @@ section.dashboard form {
 
 input {
   width: 200px;
-  height: 60px;
+  height: 40px;
   margin: 20px;
    font-size: 25px;
 }
@@ -51,6 +51,7 @@ input::placeholder {
 button {
   margin: 20px;
   font-size: 25px;
+  width: 150px;
 }
 
  button#add {
@@ -63,5 +64,12 @@ button {
 
   table {
     text-align: left;
+    border: solid white 2px;
+    margin: 30px;
+    padding: 10px;
   }
-  
+
+
+th {
+    padding-right: 40px;
+  }

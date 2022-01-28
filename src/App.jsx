@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
 import Dashboard from "./components/Dashboard";
+import Table from "./components/Table";
 
 function App() {
   const [userData, setUserData] = useState([]);
-  // test getting data from database
+
+  // test GET from database
   useEffect(() => {
     axios
       .get("http://localhost:8081/dbtest")
@@ -19,25 +20,7 @@ function App() {
   return (
     <div className="App">
       <Dashboard />
-      {userData.length && (
-        <table>
-          <tbody>
-            <tr>
-              <th>Username</th>
-              <th>Email</th>
-            </tr>
-
-            {userData.map((user) => {
-              return (
-                <tr key={uuidv4()}>
-                  <td>{user.username}</td>
-                  <td>{user.email}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      )}
+      {userData.length && <Table userData={userData} />}
     </div>
   );
 }
